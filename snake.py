@@ -8,7 +8,7 @@ def playing_area():
     pen = Turtle()
     pen.ht()
     pen.speed(0)
-    pen.color('light blue')
+    pen.color('grey')
     pen.begin_fill()
     pen.goto(-240,240)
     pen.goto(240,240)
@@ -16,7 +16,7 @@ def playing_area():
     pen.goto(-240,-240)
     pen.goto(-240,240)
     pen.end_fill()
-    
+playing_area()
 class Head(Turtle):
   def __init__(self, screen, body):
     super().__init__()
@@ -60,8 +60,11 @@ class Apple(Turtle):
 screen = Screen()
 screen.bgcolor("black")
 screen.setup(520,520)
-# Key Binding. Connects key presses and mouse clicks with function calls
 screen.listen()
+screen.onkeypress(up, "w")
+screen.onkeypress(down, "s")
+screen.onkeypress(left, "a")
+screen.onkeypress(right, "d")
 
 body = []
 
